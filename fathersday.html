@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Father's Day!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #f0f8ff, #ffe4b5);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem;
+      background-color: #4682b4;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .message-box {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    .image-section {
+      margin: 3rem 0;
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: scale(0.8) rotate(-5deg);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+    }
+
+    img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    💙 Happy Father's Day! 💙
+  </header>
+
+
+  <div class="image-section">
+    <img src="images/img1.jpg" alt="Father Image 1" class="scroll-reveal" />
+    <img src="images/img2.jpg" alt="Family Image" class="scroll-reveal" />
+    <img src="images/img3.jpg" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img4.jpg" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img5.jpg" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img6.jpg" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img9.JPG" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img10.JPG" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img12.jpg" alt="Love Image" class="scroll-reveal" />  
+    <img src="images/img13.jpg" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img14.jpg" alt="Love Image" class="scroll-reveal" />
+    <img src="images/img15.jpg" alt="Love Image" class="scroll-reveal" />
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Optional: remove after animating once
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    document.querySelectorAll('.scroll-reveal').forEach(img => {
+      observer.observe(img);
+    });
+  </script>
+</body>
+</html>
